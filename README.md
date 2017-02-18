@@ -7,12 +7,48 @@
 * Our Goal: Massive Cloud Hosting, as LPaaS
 * Prerequirement and infrastructure of Microservices
 
+# Microservices 定義
+
+> 參考書: microservices
+
+一群協同運作的小型自主服務 (autonomous service)
+
+特點:
+* 小巧，並且專注做好每一件事
+* 自主性
+  * 開放 API，透過網路存取服務，是必要的手段
+  * 目的: 解耦合。最高指導原則是: 你能夠獨立對服務進行變更，獨立部屬他，而不需要改變其他事情嗎?
+  > 你必須正確的塑模擬的服務，並將 API 弄對
+* 技術異質性
+* 彈性
+* 擴展
+* 容易部屬
+* 組織調教
+* 組合性
+* 最佳化可替換性
+
+其他分解的技術?
+
+> 微服務的優勢源自細粒度。其他分解技術能帶來一樣的好處嗎?
+
+* share library
+  * 沒有技術異質性
+  * 同一個 process
+* module
+  * seperate process
+  * 
+
+沒有銀子彈  
+* 必須精於處理部屬問題
+* 測試
+* 監控
+* 面臨分散式交易 (CAP 問題)
 
 
-# Microservices 動機
+# 採用 Microservices 動機
 
 * 小型的服務，何必動用三層式架構?
-* 自主性
+* 三層式架構的自主性差
 * Scalability of your team / organization
   - 若是三層式架構，每一層都有一個團隊負責，改版時是個大災難...
   - 若要團隊能各自負責獨立 "模組"，自主性是關鍵
@@ -38,9 +74,16 @@
   - large scale deployment is must
 
 # 經驗分享: migration from monolitch to Microservices
+
+關鍵: 取得兩大架構的平衡
+你想解決的主要問題是甚麼?
+
   - refactory
   - split
   - find boundary
+
+
+* 實際解構案例: Orca HCM
 
 
 -----
