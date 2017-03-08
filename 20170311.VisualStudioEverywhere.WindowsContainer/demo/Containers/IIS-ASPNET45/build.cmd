@@ -1,0 +1,1 @@
+docker build -t microsoft/iis-aspnet45 .
