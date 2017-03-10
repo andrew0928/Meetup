@@ -19,13 +19,14 @@ REM "c:\Program Files\IIS Express\iisexpress.exe" /path:%CD%\WebAPP\
 ::	step 2. BUILD docker image
 ::
 docker rmi andrew/vs20
-docker build --force-rm -t=andrew0928/vs20:v1 -t=andrew0928/vs20:latest .
+REM docker build --force-rm --no-cache -t=andrew0928/vs20:v2 -t=andrew0928/vs20:latest .
+docker build -t=andrew0928/vs20:v2 -t=andrew0928/vs20:latest .
 
 ::
 ::	step 3. PUSH to docker hub
 ::
 docker push andrew0928/vs20:latest
-docker push andrew0928/vs20:v1
+docker push andrew0928/vs20:v2
 
 
 
