@@ -2,6 +2,10 @@
 
 ## 內容大綱:
 
+這是我在 2017/08/17, 在 Microsoft 主辦的 Azure Cafe 活動上分享的內容: "Container" Driven Development。
+這個 session 主要的期望，除了分享我自己使用 windows container 的經驗之外，主要也是期望讓大家知道如何針對
+Container 去調整你的開發流程，同時也簡化你的架構設計，最大化 Container 帶來的各種優點。
+
 Part I: 示範案例: IP 地區查詢服務 (.NET framework)
 1. 開發與架構上的抉擇
 1. 如何將 WebAPI 容器化?
@@ -21,6 +25,9 @@ Part III: 參考資訊與趨勢
 1. DevOps & CI / CD (with containers)
 
 Part IV: Labs, Q & A
+
+
+
 
 
 
