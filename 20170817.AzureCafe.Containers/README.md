@@ -49,7 +49,7 @@ Part IV: Labs, Q & A
 網站資源:
 
 * 安德魯的部落格 / Facebook: https://www.facebook.com/andrew.blog.0928  
-* 安德魯的部落格 / Blog:     http://columns.chicken-house.net  
+* 安德魯的部落格 / Blog: http://columns.chicken-house.net  
 * GitHub:   https://github.com/andrew0928
 * SlideShare: https://www.slideshare.net/chickenwu/presentations
 
