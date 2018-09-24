@@ -22,42 +22,7 @@ namespace MQRPC.Core
 
     public abstract class MessageConsumerBase : IDisposable
     {
-        protected static Logger _logger = LogManager.GetCurrentClassLogger();
 
-
-        // TO\FROM      | STOPPED(0) | STARTING(1)  | STARTED(2)    | STOPPING(3)
-        // ----------------------------------------------------------------------
-        // STOPPED(0)   | false      | false        | false         | true
-        // STARTING(1)  | true       | false        | false         | false
-        // STARTED(2)   | false      | true         | false         | false
-        // STOPPING(3)  | false      | false        | true          | false
-        private static readonly bool[][] _state_transition_table = new bool[][]
-        {
-            new bool[] { true,  false, false, true },
-            new bool[] { true, true,  false, false },
-            new bool[] { false, true, true, false },
-            new bool[] { false, false, true,  true },
-        };
-
-        public WorkerStatusEnum Status {
-            get
-            {
-                return this._status;
-            }
-            set
-            {
-                lock(this._sync_root)
-                {
-                    if (_state_transition_table[(int)value][(int)this._status] == false) throw new InvalidOperationException($"invalid operation: {this.QueueName} from {this._status} to {value}");
-                    if (this._status != value) _logger.Info($"worker status was changed: {value}");
-                    this._status = value;
-                }
-            }
-        } private WorkerStatusEnum _status = WorkerStatusEnum.STOPPED;
-
-        internal string QueueName { get; set; }
-
-        internal IConnection _connection = null;
 
         public MessageConsumerBase(string queueName)
         {

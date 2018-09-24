@@ -5,8 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="MessageConsumerBase.cs" />
+    <Compile Remove="MessageProducerBase.cs" />
+    <Compile Remove="MessageWorkerBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="NLog" Version="4.5.10" />
+    <PackageReference Include="NLog" Version="2.1.0" />
     <PackageReference Include="RabbitMQ.Client" Version="5.1.0" />
   </ItemGroup>
 

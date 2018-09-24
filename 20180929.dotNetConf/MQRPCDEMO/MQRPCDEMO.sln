@@ -3,7 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQRPC.Core", "MQRPC.Core\MQRPC.Core.csproj", "{14133631-0D03-41DF-B192-2A544ACC5586}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQRPC.Core", "MQRPC.Core\MQRPC.Core.csproj", "{14133631-0D03-41DF-B192-2A544ACC5586}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQRPC.Client", "MQRPC.Client\MQRPC.Client.csproj", "{5FE75B3F-419C-44BD-9056-4FE5DC5A4CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQRPC.Server", "MQRPC.Server\MQRPC.Server.csproj", "{6C06C451-B554-4734-A2D8-9979B5598A5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D69C0D04-C7E0-4C4E-80FD-2DC0ADB762C6}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +24,14 @@ Global
 		{14133631-0D03-41DF-B192-2A544ACC5586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14133631-0D03-41DF-B192-2A544ACC5586}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14133631-0D03-41DF-B192-2A544ACC5586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE75B3F-419C-44BD-9056-4FE5DC5A4CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE75B3F-419C-44BD-9056-4FE5DC5A4CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE75B3F-419C-44BD-9056-4FE5DC5A4CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE75B3F-419C-44BD-9056-4FE5DC5A4CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C06C451-B554-4734-A2D8-9979B5598A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C06C451-B554-4734-A2D8-9979B5598A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C06C451-B554-4734-A2D8-9979B5598A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C06C451-B554-4734-A2D8-9979B5598A5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

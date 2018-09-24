@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MQRPC.Client.DemoRpcClient">
+    <Position X="7" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MQRPC.Core.MessageBase" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MQRPC.Core.DemoOutputMessage">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MQRPC.Core.DemoInputMessage">
+    <Position X="5" Y="1.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MQRPC.Core.RpcClientBase&lt;TInputMessage, TOutputMessage&gt;" Collapsed="true">
+    <Position X="7" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MQRPC.Core.RpcServerBase&lt;TInputMessage, TOutputMessage&gt;" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="2.25" />
+    <NestedTypes>
+      <Class Name="MQRPC.Core.RpcServerBase&lt;TInputMessage, TOutputMessage&gt;.MessageWorkerProcess" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

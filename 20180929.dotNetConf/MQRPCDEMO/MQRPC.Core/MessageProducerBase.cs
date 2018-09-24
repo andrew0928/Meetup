@@ -17,70 +17,60 @@ namespace MQRPC.Core
     public abstract class MessageProducerBase<TInputMessage> : IDisposable
         where TInputMessage : MessageBase
     {
-        protected static Logger _logger = LogManager.GetCurrentClassLogger();
-
-        protected string ExchangeName { get; set; }
-
-        protected string ExchangeType { get; set; }
-
-        protected string QueueName { get; set; }
-
-        protected MessageBusTypeEnum BusType { get; set; }
 
 
 
-        protected MessageProducerBase(string exchangeName, string exchangeType)
-        {
-            this.BusType = MessageBusTypeEnum.EXCHANGE;
-            this.ExchangeName = exchangeName;
-            this.ExchangeType = exchangeType;
+        //protected MessageProducerBase(string exchangeName, string exchangeType)
+        //{
+        //    this.BusType = MessageBusTypeEnum.EXCHANGE;
+        //    this.ExchangeName = exchangeName;
+        //    this.ExchangeType = exchangeType;
 
-            this.Init();
-        }
+        //    this.Init();
+        //}
 
-        protected MessageProducerBase(string queueName)
-        {
-            this.BusType = MessageBusTypeEnum.QUEUE;
-            this.QueueName = queueName;
+        //protected MessageProducerBase(string queueName)
+        //{
+        //    this.BusType = MessageBusTypeEnum.QUEUE;
+        //    this.QueueName = queueName;
 
-            this.Init();
-        }
-
-
-        protected virtual string ConnectionName
-        {
-            get
-            {
-                return this.GetType().FullName;
-            }
-        }
-
-        //protected ConnectionFactory connFac = MessageBusConfig.DefaultConnectionFactory;
-        protected IConnection connection = null;
-        protected IModel channel = null;
-
-        protected virtual void Init()
-        {
-            var connfac = MessageBusConfig.DefaultConnectionFactory;
-
-            this.connection = connfac.CreateConnection(
-                connfac.HostName.Split(','), 
-                this.ConnectionName);
-            this.channel = this.connection.CreateModel();
-        }
-
-        public virtual void Dispose()
-        {
-            this.channel.Dispose();
-            this.connection.Dispose();
-        }
+        //    this.Init();
+        //}
 
 
-        private int retryCount = 3;
-        private TimeSpan retryWaitTimeout = TimeSpan.Zero;
+        //protected virtual string ConnectionName
+        //{
+        //    get
+        //    {
+        //        return this.GetType().FullName;
+        //    }
+        //}
+
+        //protected IConnection connection = null;
+        //protected IModel channel = null;
+
+        //protected virtual void Init()
+        //{
+        //    var connfac = MessageBusConfig.DefaultConnectionFactory;
+
+        //    this.connection = connfac.CreateConnection(
+        //        connfac.HostName.Split(','), 
+        //        this.ConnectionName);
+        //    this.channel = this.connection.CreateModel();
+        //}
+
+        //public virtual void Dispose()
+        //{
+        //    this.channel.Dispose();
+        //    this.connection.Dispose();
+        //}
+
+
+        //private int retryCount = 3;
+        //private TimeSpan retryWaitTimeout = TimeSpan.Zero;
+
+
         private TimeSpan? messageExpirationTimeout = null;
-
-
 
         internal protected virtual string PublishMessage(
             string routing,
@@ -127,16 +117,6 @@ namespace MQRPC.Core
                 new Dictionary<string, object>() :
                 new Dictionary<string, object>(messageHeaders);
 
-#if USE_LOGTRACKER
-            if (tracker == null)
-            {
-                tracker = LogTrackerContext.Create(
-                    this.GetType().Name, 
-                    LogTrackerContextStorageTypeEnum.NONE);
-            }
-            props.Headers[LogTrackerContext._KEY_REQUEST_ID] = tracker.RequestId;
-            props.Headers[LogTrackerContext._KEY_REQUEST_START_UTCTIME] = tracker.RequestStartTimeUTC_Text;
-#endif
             props.CorrelationId = correlationId; //Guid.NewGuid().ToString("N");
 
             this.MessageProps_BeforePublish(props);
@@ -163,7 +143,6 @@ namespace MQRPC.Core
             }
             return correlationId;
         }
-
 
         protected virtual void MessageProps_BeforePublish(IBasicProperties props)
         {

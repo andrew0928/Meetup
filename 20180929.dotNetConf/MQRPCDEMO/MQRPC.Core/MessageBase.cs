@@ -13,4 +13,15 @@ namespace MQRPC.Core
         //public DateTime requestStartUtcTime { get; set; }
         //public string correlationId { get; set; }
     }
+
+    public class DemoInputMessage : MessageBase
+    {
+        public string MessageBody { get; set; }
+    }
+
+    public class DemoOutputMessage : MessageBase
+    {
+        public int ReturnCode { get; set; }
+        public string ReturnBody { get; set; }
+    }
 }
