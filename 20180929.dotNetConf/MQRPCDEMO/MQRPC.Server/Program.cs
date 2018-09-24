@@ -16,11 +16,9 @@ namespace MQRPC.Server
             {
                 Process = (input, cid) =>
                 {
-                    //Console.WriteLine($"Message Received: [{input.MessageBody}]");
                     Console.WriteLine($"- [{Thread.CurrentThread.ManagedThreadId}] start: {input.MessageBody}");
                     Task.Delay(1000).Wait();
                     Console.WriteLine($"- [{Thread.CurrentThread.ManagedThreadId}] end:   {input.MessageBody}");
-
                     return new DemoOutputMessage()
                     {
                         ReturnCode = 200,
@@ -29,7 +27,7 @@ namespace MQRPC.Server
                 }
             })
             {
-                var task = democ.StartWorkersAsync();
+                var task = democ.StartWorkersAsync(5); // start worker with 5 thread(s)...
 
                 Console.WriteLine("PRESS ENTER to EXIT...");
                 Console.ReadLine();
