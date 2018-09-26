@@ -104,8 +104,8 @@ namespace MQRPC.Core
         }
         public virtual void Dispose()
         {
-            this.StopWorkersAsync().Wait();
-
+            this.StopWorkers();
+            
             if (this._connection != null)
             {
                 this._connection.Close();
@@ -154,6 +154,7 @@ namespace MQRPC.Core
                 EventHandler<BasicDeliverEventArgs> x = (sender, e) => Subscriber_Received(sender, e, channel);
                 var consumer = new EventingBasicConsumer(channel);
                 consumer.Received += x;
+                channel.BasicQos(0, 0, true);
                 channel.BasicConsume(this.QueueName, false, consumer);
 
                 channels.Add(channel);
@@ -167,17 +168,14 @@ namespace MQRPC.Core
             for (int index = 0; index < worker_count; index++)
             {
                 consumers[index].Received -= handlers[index];
-                channels[index].Close();
-
-                channels[index] = null;
-                consumers[index] = null;
-                handlers[index] = null;
             }
-            channels.Clear(); channels = null;
-            consumers.Clear(); consumers = null;
-            handlers.Clear(); handlers = null;
 
-            await this.WaitUntilShutdownAsync();
+            WaitUntilShutdown();
+
+            for (int index = 0; index < worker_count; index++)
+            {
+                channels[index].Close();
+            }
 
             this.Status = WorkerStatusEnum.STOPPED;
         }
@@ -185,24 +183,24 @@ namespace MQRPC.Core
 
 
         
-        public async Task StopWorkersAsync()
+        public void StopWorkers()
         {
             if (this.Status == WorkerStatusEnum.STOPPED) return;
 
             this.Status = WorkerStatusEnum.STOPPING;
             this._stop_wait.Set();
 
-            await this.WaitUntilShutdownAsync();
+            //await this.WaitUntilShutdownAsync();
+            WaitUntilShutdown();
         }
-        private async Task WaitUntilShutdownAsync()
+        private void WaitUntilShutdown()
         {
-            await Task.Run(() => {
-                while (this._subscriber_received_count > 0)
-                {
-                    this._subscriber_received_wait.WaitOne(1000);
-                }
-            });
+            while (this._subscriber_received_count > 0)
+            {
+                this._subscriber_received_wait.WaitOne(100);
+            }
         }
+        
 
         private int _subscriber_received_count = 0;
         private AutoResetEvent _subscriber_received_wait = new AutoResetEvent(false);
@@ -217,6 +215,7 @@ namespace MQRPC.Core
         protected void Subscriber_Received(object sender, BasicDeliverEventArgs e, IModel channel)
         {
             Interlocked.Increment(ref this._subscriber_received_count);
+            try
             {
                 var body = e.Body;
                 var props = e.BasicProperties;
@@ -255,6 +254,10 @@ namespace MQRPC.Core
                         basicProperties: replyProps,
                         body: responseBytes);
                 }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
             }
             Interlocked.Decrement(ref this._subscriber_received_count);
             this._subscriber_received_wait.Set();

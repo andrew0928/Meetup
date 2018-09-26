@@ -17,7 +17,7 @@ namespace MQRPC.Server
                 Process = (input, cid) =>
                 {
                     Console.WriteLine($"- [{Thread.CurrentThread.ManagedThreadId}] start: {input.MessageBody}");
-                    Task.Delay(1000).Wait();
+                    Task.Delay(5000).Wait();
                     Console.WriteLine($"- [{Thread.CurrentThread.ManagedThreadId}] end:   {input.MessageBody}");
                     return new DemoOutputMessage()
                     {
@@ -33,7 +33,7 @@ namespace MQRPC.Server
                 Console.ReadLine();
 
                 Console.WriteLine("- shuting down...");
-                democ.StopWorkersAsync().Wait();
+                democ.StopWorkers();
                 Console.WriteLine("- shuted down.");
             }
 
