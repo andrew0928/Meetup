@@ -17,27 +17,32 @@ namespace MQRPC.Client
 
         static async Task Main()
         {
+            int pid = Process.GetCurrentProcess().Id;
+
+            Console.WriteLine("".PadRight(80, '-'));
+            Console.WriteLine($"* MQRPC-Client, PID: {pid}");
+            Console.WriteLine("".PadRight(80, '-'));
+
             using (DemoRpcClient demo = new DemoRpcClient())
             {
-                int pid = Process.GetCurrentProcess().Id;
                 for(int index = 0; index < 100; index++)
                 {
-                    await demo.SendAsync($"[{pid}]/[{index}] start...");
+                    await demo.SendAsync($"[C:{pid}]/[{index}] start...");
 
                     Task.WaitAll(
-                        demo.SendAsync($"[{pid}]/[{index}] - job 01..."),
-                        demo.SendAsync($"[{pid}]/[{index}] - job 02..."),
-                        demo.SendAsync($"[{pid}]/[{index}] - job 03..."),
-                        demo.SendAsync($"[{pid}]/[{index}] - job 04..."),
-                        demo.SendAsync($"[{pid}]/[{index}] - job 05..."),
-                        demo.SendAsync($"[{pid}]/[{index}] - job 06..."),
-                        demo.SendAsync($"[{pid}]/[{index}] - job 07..."),
-                        demo.SendAsync($"[{pid}]/[{index}] - job 08..."),
-                        demo.SendAsync($"[{pid}]/[{index}] - job 09..."),
-                        demo.SendAsync($"[{pid}]/[{index}] - job 10...")
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 01..."),
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 02..."),
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 03..."),
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 04..."),
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 05..."),
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 06..."),
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 07..."),
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 08..."),
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 09..."),
+                        demo.SendAsync($"[C:{pid}]/[{index}] - job 10...")
                         );
 
-                    await demo.SendAsync($"[{pid}]/[{index}] end...");
+                    await demo.SendAsync($"[C:{pid}]/[{index}] end...");
                 }
             }
         }
@@ -61,7 +66,7 @@ namespace MQRPC.Client
                     MessageBody = message,
                 },
                 new Dictionary<string, object>());
-            _logger.Trace($"- return: {message}");
+            _logger.Trace($"- return: {output.ReturnCode}, {output.ReturnBody}");
             return (output.ReturnCode, output.ReturnBody);
             //return (200, "OK好");
         }

@@ -1,6 +1,7 @@
 ﻿using MQRPC.Core;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,22 +13,31 @@ namespace MQRPC.Server
     {
         static void Main(string[] args)
         {
+            int pid = Process.GetCurrentProcess().Id;
+            int worker_count = 5;
+
+            Random rnd = new Random();
+
+            Console.WriteLine("".PadRight(80, '-'));
+            Console.WriteLine($"* MQRPC-Server(threads: {worker_count}), PID: {pid}");
+            Console.WriteLine("".PadRight(80, '-'));
+
             using (DemoRpcServer democ = new DemoRpcServer()
             {
                 Process = (input, cid) =>
                 {
                     Console.WriteLine($"- [{Thread.CurrentThread.ManagedThreadId}] start: {input.MessageBody}");
-                    Task.Delay(5000).Wait();
+                    Task.Delay(1000 + rnd.Next(4000)).Wait();
                     Console.WriteLine($"- [{Thread.CurrentThread.ManagedThreadId}] end:   {input.MessageBody}");
                     return new DemoOutputMessage()
                     {
                         ReturnCode = 200,
-                        ReturnBody = $"echo: {input.MessageBody}",
+                        ReturnBody = $"echo: [S:{pid}]/{input.MessageBody}",
                     };
                 }
             })
             {
-                var task = democ.StartWorkersAsync(5); // start worker with 5 thread(s)...
+                var task = democ.StartWorkersAsync(worker_count); // start worker with 5 thread(s)...
 
                 Console.WriteLine("PRESS ENTER to EXIT...");
                 Console.ReadLine();
