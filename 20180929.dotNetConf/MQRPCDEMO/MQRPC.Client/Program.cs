@@ -25,24 +25,24 @@ namespace MQRPC.Client
 
             using (DemoRpcClient demo = new DemoRpcClient())
             {
-                for(int index = 0; index < 100; index++)
+                for(int index = 1; index <= 100; index++)
                 {
-                    await demo.SendAsync($"[C:{pid}]/[{index}] start...");
+                    await demo.SendAsync($"[C:{pid}]/[{index:000}] start...");
 
                     Task.WaitAll(
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 01..."),
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 02..."),
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 03..."),
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 04..."),
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 05..."),
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 06..."),
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 07..."),
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 08..."),
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 09..."),
-                        demo.SendAsync($"[C:{pid}]/[{index}] - job 10...")
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 01..."),
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 02..."),
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 03..."),
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 04..."),
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 05..."),
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 06..."),
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 07..."),
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 08..."),
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 09..."),
+                        demo.SendAsync($"[C:{pid}]/[{index:000}] - job 10...")
                         );
 
-                    await demo.SendAsync($"[C:{pid}]/[{index}] end...");
+                    await demo.SendAsync($"[C:{pid}]/[{index:000}] end...");
                 }
             }
         }

@@ -26,9 +26,9 @@ namespace MQRPC.Server
             {
                 Process = (input, cid) =>
                 {
-                    Console.WriteLine($"- [{Thread.CurrentThread.ManagedThreadId}] start: {input.MessageBody}");
+                    Console.WriteLine($"- [T:{Thread.CurrentThread.ManagedThreadId:000}] start: {input.MessageBody}");
                     Task.Delay(1000 + rnd.Next(4000)).Wait();
-                    Console.WriteLine($"- [{Thread.CurrentThread.ManagedThreadId}] end:   {input.MessageBody}");
+                    Console.WriteLine($"- [T:{Thread.CurrentThread.ManagedThreadId:000}] end:   {input.MessageBody}");
                     return new DemoOutputMessage()
                     {
                         ReturnCode = 200,
