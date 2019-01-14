@@ -1,0 +1,15 @@
+﻿1. why queue
+
+push -> pull
+
+action      | central control vs self control
+provision   | loop | on-demand |
+get job     | dispatch | fetch |
+average load| peak | smooth |
+utilization | peak | full, stable |
+            | depend on algorithm | simple |
+            | hard in diff size vms | simple |
+scale out + | complex | simple (self start, self config) |
+scale out - | complex | simple (self down, graceful) |
+bottleneck  | gateway | queue self |
+
