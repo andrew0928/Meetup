@@ -24,7 +24,6 @@ namespace MQRPC.Core
     {
         protected static Logger _logger = LogManager.GetCurrentClassLogger();
 
-
         // TO\FROM      | STOPPED(0) | STARTING(1)  | STARTED(2)    | STOPPING(3)
         // ----------------------------------------------------------------------
         // STOPPED(0)   | false      | false        | false         | true

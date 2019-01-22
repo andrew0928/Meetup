@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.3.0</Version>
+    <Authors>ARCH</Authors>
+    <Company>91APP</Company>
+    <RepositoryUrl>http://gitlab.91app.com/msa/nineyi.msa.infra</RepositoryUrl>
+    <AssemblyVersion>0.3.0.0</AssemblyVersion>
+    <FileVersion>0.3.0.0</FileVersion>
+    <PackageProjectUrl>http://docs.91dev.tw/nuget/nineyi.msa.infra/latest/</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Configuration\**" />
+    <Compile Remove="Globalization\**" />
+    <Compile Remove="ServiceDiscovery\**" />
+    <Compile Remove="ServiceSecurity\**" />
+    <EmbeddedResource Remove="Configuration\**" />
+    <EmbeddedResource Remove="Globalization\**" />
+    <EmbeddedResource Remove="ServiceDiscovery\**" />
+    <EmbeddedResource Remove="ServiceSecurity\**" />
+    <None Remove="Configuration\**" />
+    <None Remove="Globalization\**" />
+    <None Remove="ServiceDiscovery\**" />
+    <None Remove="ServiceSecurity\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ServiceClient.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Composite" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="2.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>
