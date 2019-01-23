@@ -17,7 +17,7 @@ namespace ThreadSyncDemo
                 threads.Add(new Thread(Worker));
             }
 
-            //threads.Add(new Thread(ManualResetEventDemoWorker));
+            threads.Add(new Thread(ManualResetEventDemoWorker));
             //threads.Add(new Thread(AutoResetEventDemoWorker));
 
             threads.Add(new Thread(ScreenWorker));
@@ -53,7 +53,8 @@ namespace ThreadSyncDemo
             while(_timer.Elapsed.TotalSeconds < _total_seconds)
             {
                 Thread.Sleep(300);
-                Console.Clear();
+                //Console.Clear();
+                Console.SetCursorPosition(0, 0);
                 foreach(int tid in _chart.Keys)
                 {
                     Console.WriteLine($"{_chart[tid].name.PadLeft(10)} [{tid:D03}]: {new string(_chart[tid].bar)}");
