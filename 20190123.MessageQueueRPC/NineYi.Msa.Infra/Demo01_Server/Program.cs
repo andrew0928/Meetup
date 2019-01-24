@@ -23,6 +23,7 @@ namespace Demo01_Server
                         QueueName = "demo-01",
                         ConnectionURL = "amqp://guest:guest@localhost:5672/",
                     });
+                    //services.AddSingleton<NineYi.Msa.Infra.Messaging.MessageKeeper>();
                     services.AddSingleton<IHostedService, MessageWorker<MyMessage>>();
                 })
                 .Build();
@@ -30,7 +31,7 @@ namespace Demo01_Server
 
             (host.Services.GetRequiredService<IHostedService>() as MessageWorker<MyMessage>).Process = ((input, cid, scope) =>
             {
-                Console.WriteLine("Hello");
+                Console.WriteLine($"Hello, {input.Text}");
             });
 
             using (host)

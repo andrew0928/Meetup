@@ -59,7 +59,7 @@ namespace MessageBenchmark
                     QueueName = "benchmark-queue",
                     WorkerThreadsCount = worker_threads,
                     PrefetchCount = 1
-                },null, null, null)
+                },null, null)
                 {
                     Process = (message, cid, scope) =>
                     {

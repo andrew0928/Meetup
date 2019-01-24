@@ -39,12 +39,12 @@ namespace NineYi.Msa.Infra.Messaging
         public MessageWorkerBase(
             MessageWorkerOptions options,
             ILogger<MessageWorkerBase> logger,
-            IMessageKeeper messageKeeper,
+            //IMessageKeeper messageKeeper,
             IServiceProvider services)
         {
             this._options = options;
             this._logger = logger;
-            this._messageKeeper = messageKeeper;
+            //this._messageKeeper = messageKeeper;
             this._services = services;
 
             if (this._logger == null) this._logger = new Microsoft.Extensions.Logging.Abstractions.NullLogger<MessageWorkerBase>();
@@ -179,8 +179,8 @@ namespace NineYi.Msa.Infra.Messaging
         public MessageWorker(
             MessageWorkerOptions options,
             ILogger<MessageWorker<TInputMessage>> logger,
-            IMessageKeeper messageKeeper,
-            IServiceProvider services) : base(options, logger, messageKeeper, services)
+            //IMessageKeeper messageKeeper,
+            IServiceProvider services) : base(options, logger, services)
         {
         }
 
@@ -290,7 +290,7 @@ namespace NineYi.Msa.Infra.Messaging
         public MessageWorker(
             MessageWorkerOptions options,
             ILogger<MessageWorker<TInputMessage, TOutputMessage>> logger,
-            IServiceProvider services) : base(options, logger, null, services)
+            IServiceProvider services) : base(options, logger, services)
         {
             //if (this._services != null)
             //{

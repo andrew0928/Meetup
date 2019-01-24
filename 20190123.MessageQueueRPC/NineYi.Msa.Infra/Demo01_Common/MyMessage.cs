@@ -5,6 +5,6 @@ namespace Demo01_Common
 {
     public class MyMessage : MessageBase
     {
-
+        public string Text { get; set; }
     }
 }

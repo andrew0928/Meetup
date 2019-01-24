@@ -19,10 +19,15 @@ namespace Demo01_Client
                 ConnectionURL = @"amqp://guest:guest@localhost:5672/",
             }, null, null))
             {
-                client.SendMessage("", new MyMessage()
-                {
 
-                });
+                while (true)
+                {
+                    client.SendMessage("", new MyMessage()
+                    {
+                        Text = Guid.NewGuid().ToString()
+                    });
+                    Task.Delay(1000).Wait();
+                }
             }
         }
     }
