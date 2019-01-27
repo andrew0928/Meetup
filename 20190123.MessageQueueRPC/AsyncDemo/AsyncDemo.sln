@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncDemo", "AsyncDemo\AsyncDemo.csproj", "{281BD40C-30F3-4C05-AEB0-0BA2CB91A8FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncDemo", "AsyncDemo.csproj", "{058CA9CE-42C9-466A-B431-C1FA775F9C5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{281BD40C-30F3-4C05-AEB0-0BA2CB91A8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{281BD40C-30F3-4C05-AEB0-0BA2CB91A8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{281BD40C-30F3-4C05-AEB0-0BA2CB91A8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{281BD40C-30F3-4C05-AEB0-0BA2CB91A8FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{058CA9CE-42C9-466A-B431-C1FA775F9C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{058CA9CE-42C9-466A-B431-C1FA775F9C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{058CA9CE-42C9-466A-B431-C1FA775F9C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{058CA9CE-42C9-466A-B431-C1FA775F9C5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DD13A577-6EA5-43DB-8DEC-401F4E922736}
+		SolutionGuid = {E1768027-2611-4245-A452-CF5B3DC6A927}
 	EndGlobalSection
 EndGlobal
