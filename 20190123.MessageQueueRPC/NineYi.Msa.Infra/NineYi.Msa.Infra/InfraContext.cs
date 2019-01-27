@@ -26,8 +26,6 @@ namespace NineYi.Msa.Infra
 
         public string Region { get; set; }
 
-        [Obsolete]
-        public static InfraContext Current { get; set; }
 
     }
 }

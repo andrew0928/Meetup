@@ -1,5 +1,5 @@
 set tags=latest
-set version=0.5.4-dev
+set version=0.5.4-demo20190128
 
 docker build -t andrew0928/mqrpc.consumer:%tags% -t andrew0928/mqrpc.consumer:%version% DemoRPC_Server\bin\Debug\
 docker build -t andrew0928/mqrpc.producer:%tags% -t andrew0928/mqrpc.producer:%version% DemoRPC_Client\bin\Debug\
