@@ -1,20 +1,20 @@
 version: '2.1'
 services:
   rabbitmq:
-    image: andrew0928/mqrpc.rabbitmq
+    image: 91app/demo.mqrpc.rabbitmq
 #    ports:
 #      - "5672:5672"
 #      - "15672:15672"
 
   producer:
-    image: andrew0928/mqrpc.producer
+    image: 91app/demo.mqrpc.producer
     environment:
       - MQURL="amqp://guest:guest@rabbitmq:5672/"
     depends_on:
       - rabbitmq
 
   consumer:
-    image: andrew0928/mqrpc.consumer
+    image: 91app/demo.mqrpc.consumer
     environment:
       - MQURL="amqp://guest:guest@rabbitmq:5672/"
     depends_on:

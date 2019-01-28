@@ -46,7 +46,7 @@ namespace DemoRPC_Client
             {
                 DemoOutputMessage output = null;
                 Stopwatch timer = new Stopwatch();
-                for (int index = 1; index <= 100; index++)
+                for (int index = 1; index <= 30; index++)
                 {
                     output = await client.SendMessageAsync("", new DemoInputMessage()
                     {
@@ -67,7 +67,7 @@ namespace DemoRPC_Client
                         client.SendMessageAsync("", new DemoInputMessage() { MessageBody = $"[C:{pid}]/[{index:000}] - job 08..." }, null),
                         client.SendMessageAsync("", new DemoInputMessage() { MessageBody = $"[C:{pid}]/[{index:000}] - job 09..." }, null),
                         client.SendMessageAsync("", new DemoInputMessage() { MessageBody = $"[C:{pid}]/[{index:000}] - job 10..." }, null));
-                    Console.WriteLine($"- [{DateTime.Now:HH:mm:ss}] - all jobs (01 ~ 10) execute complete and return, average throughput: {10000.0 / timer.ElapsedMilliseconds} jobs/sec");
+                    Console.WriteLine($"- [{DateTime.Now:HH:mm:ss}] - all jobs (01 ~ 10) execute complete and return, total execute time: {timer.ElapsedMilliseconds / 1000} sec");
 
                     //await RemoteCallAsync($"[C:{pid}]/[{index:000}] end...");
                     output = await client.SendMessageAsync("", new DemoInputMessage()

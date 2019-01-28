@@ -1,16 +1,18 @@
 set tags=latest
-set version=0.5.4-demo20190128
+set version=0.5.7-20190128
 
-docker build -t andrew0928/mqrpc.consumer:%tags% -t andrew0928/mqrpc.consumer:%version% DemoRPC_Server\bin\Debug\
-docker build -t andrew0928/mqrpc.producer:%tags% -t andrew0928/mqrpc.producer:%version% DemoRPC_Client\bin\Debug\
-::docker build -t andrew0928/mqrpc.rabbitmq:%tags% -t andrew0928/mqrpc.rabbitmq:%version%  rabbitmq\
+docker build -t 91app/demo.mqrpc.consumer:%tags% -t 91app/demo.mqrpc.consumer:%version% DemoRPC_Server\bin\Debug\
+docker build -t 91app/demo.mqrpc.producer:%tags% -t 91app/demo.mqrpc.producer:%version% DemoRPC_Client\bin\Debug\
+::docker build -t 91app/demo.mqrpc.rabbitmq:%tags% -t 91app/demo.mqrpc.rabbitmq:%version%  rabbitmq\
+docker tag andrew0928/mqrpc.rabbitmq:latest 91app/demo.mqrpc.rabbitmq:%tags%
+docker tag andrew0928/mqrpc.rabbitmq:latest 91app/demo.mqrpc.rabbitmq:%version%
 
-docker push andrew0928/mqrpc.consumer:%tags%
-docker push andrew0928/mqrpc.consumer:%version%
-docker push andrew0928/mqrpc.producer:%tags%
-docker push andrew0928/mqrpc.producer:%version%
-::docker push andrew0928/mqrpc.rabbitmq:%tags%
-::docker push andrew0928/mqrpc.rabbitmq:%version%
+docker push 91app/demo.mqrpc.consumer:%tags%
+docker push 91app/demo.mqrpc.consumer:%version%
+docker push 91app/demo.mqrpc.producer:%tags%
+docker push 91app/demo.mqrpc.producer:%version%
+docker push 91app/demo.mqrpc.rabbitmq:%tags%
+docker push 91app/demo.mqrpc.rabbitmq:%version%
 
 
 goto exit

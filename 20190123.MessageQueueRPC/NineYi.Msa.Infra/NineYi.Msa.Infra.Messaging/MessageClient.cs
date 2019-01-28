@@ -288,7 +288,7 @@ namespace NineYi.Msa.Infra.Messaging
         public override void Dispose()
         {
             this.ReplyQueueConsumer.Received -= this.ReplyQueue_Received;
-            this.channel.QueueDelete(ReplyQueueName);
+            //this.channel.QueueDelete(ReplyQueueName);
 
             base.Dispose();
         }
