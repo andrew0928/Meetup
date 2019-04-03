@@ -82,3 +82,12 @@ tasklist | find /i "ping"
 在 windows 10 pro 重新測試一次...
 
 在 windows 2019 加上 --isolation=hyperv
+
+
+## DEMO
+
+小抄:
+
+Google DNS: 8.8.8.8, 0x08080808 = 134744072
+Hinet DNS: 168.95.1.1, 0xA85F0101 = 2824798465
+IBM DNS: 1.1.1.1, 0x0101010101 = 16843009
