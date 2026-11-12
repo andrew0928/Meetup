@@ -1,0 +1,1333 @@
+https://www.youtube.com/watch?v=JQfX52Wo-ZE
+--
+
+
+魏佑嘉
+​用 ubuntu 22.04 做 k8s node，然後跑 .net 6 以上的容器可能會出問題 (我有踩到坑，最後退回 ubuntu 20.04 就解決了..)
+
+LoveWife99
+​6666
+
+Egan
+​太強惹
+
+Aska Su
+​首席來了
+
+STUDY4
+​\Andrew/ \Andrew/ \Andrew/ \Andrew/ \Andrew/
+
+Aska Su
+​謝謝Bruce
+
+黃葡萄
+​Andrew 🥰
+
+黑摸摸
+​😍
+
+Poy Chang
+​😍😍😍😍
+
+LoveWife99
+​首席帥🥰
+
+STUDY4
+​愛心刷起來 ❤❤❤❤
+
+Alan Tsai 的學習筆記
+​😍😍😍😍😍😍😍
+
+LoveWife99
+​😍😍😍😍😍😍😍
+
+LoveWife99
+​🤩🤩😍😍🤩🤩😍😍
+
+LoveWife99
+​😍🤩😍🤩😍🤩😍🤩
+
+James Wang
+​好帥
+
+LoveWife99
+​單身ㄇ
+
+黃葡萄
+​服務 > 功能
+
+中年大叔的逆襲
+​🥰
+
+Chen-Yu Pao
+​face-red-heart-shapeface-red-heart-shapeface-red-heart-shapeface-red-heart-shapeface-red-heart-shape
+
+Jeff
+​Contract
+
+迪奧布蘭朵
+​拼錯了
+
+迪奧布蘭朵
+​哈哈哈哈
+
+Money Yu
+​所以Andrew老師暗指溝通最重要🙂
+
+Poy Chang
+​投影片也要有 CAPTCHA
+
+LoveWife99
+​網軍還有30秒抵達戰場 討罰Andrew🤩
+
+陳傳興
+​魏佑嘉 感謝分享
+
+Kehao Chen
+​為什麼 Impl 也是三份阿，是 backend for frontend pattern？
+
+STUDY4
+​如果大家要問 Andrew 問題可以直接留言喔，我們抓Q&A回答 :D
+
+Vincent Wu
+​直播會保留嗎？
+
+STUDY4
+​會後可以觀看喔，但因為還需要做一些後製, 今天活動後會暫時下架, 我們會統一傳回youtube主頻道讓大家可以看回放，會再另行公告
+
+Vincent Wu
+​🤗
+
+黃葡萄
+​自動化測試哪邊有問題, 通常後端會用unit test確保, 自己寫的API符合功能需求, 但往往在QA自動化(整合)測試時候發生非預期結果, API first 可以避免這部分的問題嗎?
+
+Kehao Chen
+​個人理解，API First 無法避免整合測試不會發生非預期結果，那不是它要解決的問題，而是先訂出合約 (Contract)，使得相關成員都能依據這份合約並行工作
+
+Kehao Chen
+​粉絲專頁的投影片，似乎無法下載
+
+迪奧布蘭朵
+​合約訂出來 前後端QA 就可以按照這份自己Mock
+
+STUDY4
+​Hi Kehao, 是指 Andrew 粉絲專頁的投影片嗎?
+
+STUDY4
+​小編不是他的小編 現在也不敢打斷 😆 等等立馬跟首席說
+
+Kehao Chen
+​是的
+
+LoveWife99
+​🥰😍
+
+LoveWife99
+​thanks Andrew
+
+LoveWife99
+​Great Share
+
+LoveWife99
+​🤘🤘🤘🤘🤘
+
+Jimmy Ho
+​poy大大分身之術
+
+黃葡萄
+​🤟
+
+吳俊毅
+​影武者的分身術
+
+吳剛志（Andrew Wu）
+​我的投影片可以下載了，上台太緊張忘了開權限 XDD
+
+黑摸摸
+​🥰
+
+黃葡萄
+​🥰
+
+Kehao Chen
+​感謝
+
+黑摸摸
+​可以看了 感謝~~
+
+Syuan Tsai
+​對接的廠商的語言是怎麼蒐集的呢? 程式中做紀錄還是主動詢問廠商?
+
+吳剛志（Andrew Wu）
+​PTSD ... XDD
+
+迪奧布蘭朵
+​請問SDK的版號通常怎麼管理？
+
+Will保哥
+​無論選哪一種都會下地獄吧？😆
+
+黃葡萄
+​🥲
+
+吳剛志（Andrew Wu）
+​XDD
+
+Poy Chang
+​😆😆😆
+
+Poy Chang
+​所以下去了兩次
+
+吳剛志（Andrew Wu）
+​版號: 就 SemVer 啊，不過 SDK 的相容，應該不是對 API，而是對 SDK 自己的 interface ..
+
+Winnie Lin
+​🤣
+
+吳剛志（Andrew Wu）
+​只要把下地獄的入口訂好 interface .. 你就能用各種不同方式體驗下地獄的過程喔 (咦?
+
+黃葡萄
+​為什麼不選擇 .Net standard 開發?
+
+Money Yu
+​System.Text.Json 可以處理 reference loop 嗎
+
+
+---
+
+
+
+1:35:19
+黃葡萄
+​謝謝
+
+1:35:24
+Mick Hsieh
+​感謝
+
+1:35:32
+吳剛志
+​好棒的分享 :D
+
+1:35:34
+Darien Wei
+​謝謝
+
+1:38:57
+Kehao Chen
+​感謝說明，大小寫也有區別，當初也採過雷
+
+1:41:33
+魏佑嘉
+​用 ubuntu 22.04 做 k8s node，然後跑 .net 6 以上的容器可能會出問題 (我有踩到坑，最後退回 ubuntu 20.04 就解決了..)
+
+1:42:58
+LoveWife99
+​6666
+
+1:43:15
+Egan
+​太強惹
+
+1:43:21
+Aska Su
+​首席來了
+
+1:43:21
+STUDY4
+​\Andrew/ \Andrew/ \Andrew/ \Andrew/ \Andrew/
+
+1:43:30
+Aska Su
+​謝謝Bruce
+
+1:43:35
+黃葡萄
+​Andrew 🥰
+
+1:43:37
+黑摸摸
+​😍
+
+1:44:04
+Poy Chang
+​😍😍😍😍
+
+1:44:13
+LoveWife99
+​首席帥🥰
+
+1:44:39
+STUDY4
+​愛心刷起來 ❤❤❤❤
+
+1:44:46
+Alan Tsai 的學習筆記
+​😍😍😍😍😍😍😍
+
+1:48:10
+LoveWife99
+​😍😍😍😍😍😍😍
+
+1:48:13
+LoveWife99
+​🤩🤩😍😍🤩🤩😍😍
+
+1:48:17
+LoveWife99
+​😍🤩😍🤩😍🤩😍🤩
+
+1:48:36
+James Wang
+​好帥
+
+1:48:58
+LoveWife99
+​單身ㄇ
+
+1:49:40
+黃葡萄
+​服務 > 功能
+
+1:50:29
+中年大叔的逆襲
+​🥰
+
+1:52:06
+Chen-Yu Pao
+​face-red-heart-shapeface-red-heart-shapeface-red-heart-shapeface-red-heart-shapeface-red-heart-shape
+
+1:52:28
+Jeff
+​Contract
+
+1:52:34
+迪奧布蘭朵
+​拼錯了
+
+1:52:37
+迪奧布蘭朵
+​哈哈哈哈
+
+1:55:34
+Money Yu
+​所以Andrew老師暗指溝通最重要🙂
+
+1:56:10
+Poy Chang
+​投影片也要有 CAPTCHA
+
+1:56:36
+LoveWife99
+​網軍還有30秒抵達戰場 討罰Andrew🤩
+
+1:57:55
+陳傳興
+​魏佑嘉 感謝分享
+
+2:00:16
+Kehao Chen
+​為什麼 Impl 也是三份阿，是 backend for frontend pattern？
+
+2:02:09
+STUDY4
+​如果大家要問 Andrew 問題可以直接留言喔，我們抓Q&A回答 :D
+
+2:03:37
+Vincent Wu
+​直播會保留嗎？
+
+2:04:43
+STUDY4
+​會後可以觀看喔，但因為還需要做一些後製, 今天活動後會暫時下架, 我們會統一傳回youtube主頻道讓大家可以看回放，會再另行公告
+
+2:05:20
+Vincent Wu
+​🤗
+
+2:07:20
+黃葡萄
+​自動化測試哪邊有問題, 通常後端會用unit test確保, 自己寫的API符合功能需求, 但往往在QA自動化(整合)測試時候發生非預期結果, API first 可以避免這部分的問題嗎?
+
+2:09:42
+Kehao Chen
+​個人理解，API First 無法避免整合測試不會發生非預期結果，那不是它要解決的問題，而是先訂出合約 (Contract)，使得相關成員都能依據這份合約並行工作
+
+2:15:39
+Kehao Chen
+​粉絲專頁的投影片，似乎無法下載
+
+2:17:17
+迪奧布蘭朵
+​合約訂出來 前後端QA 就可以按照這份自己Mock
+
+2:18:21
+STUDY4
+​Hi Kehao, 是指 Andrew 粉絲專頁的投影片嗎?
+
+2:18:50
+STUDY4
+​小編不是他的小編 現在也不敢打斷 😆 等等立馬跟首席說
+
+2:19:10
+Kehao Chen
+​是的
+
+2:36:48
+LoveWife99
+​🥰😍
+
+2:36:54
+LoveWife99
+​thanks Andrew
+
+2:37:06
+LoveWife99
+​Great Share
+
+2:37:43
+LoveWife99
+​🤘🤘🤘🤘🤘
+
+2:37:45
+Jimmy Ho
+​poy大大分身之術
+
+2:42:42
+黃葡萄
+​🤟
+
+
+----
+
+
+
+
+1:35:19
+黃葡萄
+​謝謝
+
+1:35:24
+Mick Hsieh
+​感謝
+
+1:35:32
+吳剛志
+​好棒的分享 :D
+
+1:35:34
+Darien Wei
+​謝謝
+
+1:38:57
+Kehao Chen
+​感謝說明，大小寫也有區別，當初也採過雷
+
+1:41:33
+魏佑嘉
+​用 ubuntu 22.04 做 k8s node，然後跑 .net 6 以上的容器可能會出問題 (我有踩到坑，最後退回 ubuntu 20.04 就解決了..)
+
+1:42:58
+LoveWife99
+​6666
+
+1:43:15
+Egan
+​太強惹
+
+1:43:21
+Aska Su
+​首席來了
+
+1:43:21
+STUDY4
+​\Andrew/ \Andrew/ \Andrew/ \Andrew/ \Andrew/
+
+1:43:30
+Aska Su
+​謝謝Bruce
+
+1:43:35
+黃葡萄
+​Andrew 🥰
+
+1:43:37
+黑摸摸
+​😍
+
+1:44:04
+Poy Chang
+​😍😍😍😍
+
+1:44:13
+LoveWife99
+​首席帥🥰
+
+1:44:39
+STUDY4
+​愛心刷起來 ❤❤❤❤
+
+1:44:46
+Alan Tsai 的學習筆記
+​😍😍😍😍😍😍😍
+
+1:48:10
+LoveWife99
+​😍😍😍😍😍😍😍
+
+1:48:13
+LoveWife99
+​🤩🤩😍😍🤩🤩😍😍
+
+1:48:17
+LoveWife99
+​😍🤩😍🤩😍🤩😍🤩
+
+1:48:36
+James Wang
+​好帥
+
+1:48:58
+LoveWife99
+​單身ㄇ
+
+1:49:40
+黃葡萄
+​服務 > 功能
+
+1:50:29
+中年大叔的逆襲
+​🥰
+
+1:52:06
+Chen-Yu Pao
+​face-red-heart-shapeface-red-heart-shapeface-red-heart-shapeface-red-heart-shapeface-red-heart-shape
+
+1:52:28
+Jeff
+​Contract
+
+1:52:34
+迪奧布蘭朵
+​拼錯了
+
+1:52:37
+迪奧布蘭朵
+​哈哈哈哈
+
+1:55:34
+Money Yu
+​所以Andrew老師暗指溝通最重要🙂
+
+1:56:10
+Poy Chang
+​投影片也要有 CAPTCHA
+
+1:56:36
+LoveWife99
+​網軍還有30秒抵達戰場 討罰Andrew🤩
+
+1:57:55
+陳傳興
+​魏佑嘉 感謝分享
+
+2:00:16
+Kehao Chen
+​為什麼 Impl 也是三份阿，是 backend for frontend pattern？
+
+2:02:09
+STUDY4
+​如果大家要問 Andrew 問題可以直接留言喔，我們抓Q&A回答 :D
+
+2:03:37
+Vincent Wu
+​直播會保留嗎？
+
+2:04:43
+STUDY4
+​會後可以觀看喔，但因為還需要做一些後製, 今天活動後會暫時下架, 我們會統一傳回youtube主頻道讓大家可以看回放，會再另行公告
+
+2:05:20
+Vincent Wu
+​🤗
+
+2:07:20
+黃葡萄
+​自動化測試哪邊有問題, 通常後端會用unit test確保, 自己寫的API符合功能需求, 但往往在QA自動化(整合)測試時候發生非預期結果, API first 可以避免這部分的問題嗎?
+
+2:09:42
+Kehao Chen
+​個人理解，API First 無法避免整合測試不會發生非預期結果，那不是它要解決的問題，而是先訂出合約 (Contract)，使得相關成員都能依據這份合約並行工作
+
+2:15:39
+Kehao Chen
+​粉絲專頁的投影片，似乎無法下載
+
+2:17:17
+迪奧布蘭朵
+​合約訂出來 前後端QA 就可以按照這份自己Mock
+
+2:18:21
+STUDY4
+​Hi Kehao, 是指 Andrew 粉絲專頁的投影片嗎?
+
+2:18:50
+STUDY4
+​小編不是他的小編 現在也不敢打斷 😆 等等立馬跟首席說
+
+2:19:10
+Kehao Chen
+​是的
+
+2:36:48
+LoveWife99
+​🥰😍
+
+2:36:54
+LoveWife99
+​thanks Andrew
+
+2:37:06
+LoveWife99
+​Great Share
+
+2:37:43
+LoveWife99
+​🤘🤘🤘🤘🤘
+
+2:37:45
+Jimmy Ho
+​poy大大分身之術
+
+2:42:42
+黃葡萄
+​🤟
+
+2:45:37
+吳俊毅
+​影武者的分身術
+
+2:48:40
+吳剛志
+​我的投影片可以下載了，上台太緊張忘了開權限 XDD
+
+2:49:38
+黑摸摸
+​🥰
+
+2:49:57
+黃葡萄
+​🥰
+
+2:50:00
+Kehao Chen
+​感謝
+
+2:50:43
+黑摸摸
+​可以看了 感謝~~
+
+2:56:59
+Syuan Tsai
+​對接的廠商的語言是怎麼蒐集的呢? 程式中做紀錄還是主動詢問廠商?
+
+3:08:56
+吳剛志
+​PTSD ... XDD
+
+3:11:51
+迪奧布蘭朵
+​請問SDK的版號通常怎麼管理？
+
+3:12:24
+Will保哥
+​無論選哪一種都會下地獄吧？😆
+
+3:13:40
+吳剛志
+​XDD
+
+3:13:50
+Poy Chang
+​😆😆😆
+
+3:13:58
+Poy Chang
+​所以下去了兩次
+
+3:14:12
+吳剛志
+​版號: 就 SemVer 啊，不過 SDK 的相容，應該不是對 API，而是對 SDK 自己的 interface ..
+
+3:14:35
+Winnie Lin
+​🤣
+
+3:15:22
+吳剛志
+​只要把下地獄的入口訂好 interface .. 你就能用各種不同方式體驗下地獄的過程喔 (咦?
+
+3:15:51
+黃葡萄
+​為什麼不選擇 .Net standard 開發?
+
+3:16:00
+Money Yu
+​System.Text.Json 可以處理 reference loop 嗎
+
+3:19:56
+Will保哥
+​您可以使用 JsonSerializerOptions.IgnoreReferenceLoops 屬性來忽略 reference loop。
+
+3:21:30
+Syuan Tsai
+​SDK適合從外部設地連線嗎?
+
+3:21:49
+Syuan Tsai
+​像是DB的連線
+
+3:24:49
+Will保哥
+​不應該有過多的相依性，一般不會把資料庫連線的功能整合進 SDK，否則相依性過重會導致函式庫重用困難。
+
+3:26:54
+Syuan Tsai
+​如果功能需求上真的需要從外部的資源取得(其他的DB或者API)，會比較建議獨立出一個服務使用嗎?
+
+3:27:07
+吳剛志
+​不要有太多相依性 +1
+
+3:28:45
+吳剛志
+​舉個例子 (我們做 SDK 常常被問到，都快變 FAQ 了): SDK 呼叫 API 該不該自動 retry ? 只有很明確需要 retry 的場景才會藏在裡面 retry, 其他大部分我都建議使用時自己判斷，用 Polly 這種套件。
+
+3:29:03
+吳剛志
+​相依性這種問題，盡量讓最終使用的團隊自己決定比較好
+
+3:29:25
+Syuan Tsai
+​了解了 謝謝
+
+3:29:46
+Will保哥
+​你要超級方便的 SDK，就是把所有東西包在一起，如果你堅持，我也會說：「這是對的」
+
+3:30:18
+吳剛志
+​保哥的意思是: 1 + 1 = 5.. (你說的對)
+
+3:36:13
+Will保哥
+​我覺得聲音有點小，主控應該可以調高音量增益
+
+3:39:35
+STUDY4
+​感恩保哥回饋，立即增加5db
+
+3:42:45
+Will保哥
+​Andrew 是軟的啊～ XD
+
+
+---
+
+
+
+3:28:45
+吳剛志
+​舉個例子 (我們做 SDK 常常被問到，都快變 FAQ 了): SDK 呼叫 API 該不該自動 retry ? 只有很明確需要 retry 的場景才會藏在裡面 retry, 其他大部分我都建議使用時自己判斷，用 Polly 這種套件。
+
+3:29:03
+吳剛志
+​相依性這種問題，盡量讓最終使用的團隊自己決定比較好
+
+3:29:25
+Syuan Tsai
+​了解了 謝謝
+
+3:29:46
+Will保哥
+​你要超級方便的 SDK，就是把所有東西包在一起，如果你堅持，我也會說：「這是對的」
+
+3:30:18
+吳剛志
+​保哥的意思是: 1 + 1 = 5.. (你說的對)
+
+3:36:13
+Will保哥
+​我覺得聲音有點小，主控應該可以調高音量增益
+
+3:39:35
+STUDY4
+​感恩保哥回饋，立即增加5db
+
+3:42:45
+Will保哥
+​Andrew 是軟的啊～ XD
+
+3:47:14
+吳剛志
+​XD
+
+3:49:14
+黃葡萄
+​改不動 哭~哭~
+
+3:49:49
+Will保哥
+​傳統的應用：已經進入 Fear Cycle
+
+3:50:32
+Will保哥
+​現代的應用：還沒進入就開始 Fear Cycle
+
+3:50:41
+黃葡萄
+​order v1, order v2, order v3 ....等
+
+3:52:57
+Kei Liao
+​好像在唸咒語
+
+3:55:20
+Will保哥
+​今天都沒人寫共筆耶 XD
+
+3:56:23
+陳傳興
+​嗯，有點可惜 🙂
+
+3:56:40
+黃葡萄
+​😅 寫太爛 剛剛刪掉
+
+3:59:56
+吳俊毅
+​我都要講課時，才進入 Fear Cycle (咦？)
+
+4:08:13
+Hank Chen
+​無信號
+
+4:08:19
+Xie jinghao
+​無信號??
+
+4:08:22
+黃葡萄
+​沒有信號?
+
+4:09:19
+STUDY4
+​訊號異常，現場 LIVE Demo 排除 Bug 中....
+
+4:09:37
+王泉富
+​事故放送時間XD
+
+4:09:55
+陳傳興
+​好像專案現場哦
+
+4:10:18
+Jimmy Ho
+​換電腦！換電腦！
+
+4:10:23
+迪奧布蘭朵
+​現場 debug 大家都很熟
+
+4:10:31
+王泉富
+​電腦問題 就換新電腦吧!!
+
+4:10:36
+Syuan Tsai
+​Demo魔咒
+
+4:10:57
+黃葡萄
+​看來是線的問題
+
+4:11:38
+王泉富
+​可以可以XD
+
+4:12:17
+Will保哥
+​低司鬼 是什麼？（不好意思聽不懂）
+
+4:12:24
+吳剛志
+​沒有投影片也可以講 :D
+
+4:12:25
+Winnie Lin
+​有投影片嗎? Live 提供, 大家同步腦補
+
+4:13:05
+吳剛志
+​discrete
+
+4:13:40
+吳剛志
+​只有 alan 有大螢幕特寫鏡頭 :D
+
+4:16:36
+Jimmy Ho
+​這笑話不錯阿XD
+
+4:16:48
+王泉富
+​剛剛說沒笑話是謙虛之詞
+
+4:17:19
+Poy Chang
+​剛剛的畫面 很有佈道大會的感覺 XDD
+
+4:17:29
+Winnie Lin
+​👍🏻
+
+4:17:37
+吳剛志
+​4K 特寫直播
+
+4:21:22
+STUDY4
+​看完 4K 的 Alan，大家對於議程內容有甚麼想問 Alan 呢？問題可以直接留言喔，我們抓 Q&A 回答唷 😁
+
+4:33:19
+王泉富
+​感謝Alan
+
+4:36:48
+LoveWife99
+​Alan哥真的技術流!!!!
+
+4:41:01
+王泉富
+​Alan的這個這段分享很棒
+
+4:42:58
+台灣超模
+​可以的，解體大象
+
+
+
+
+
+
+
+---
+
+
+6:09:26
+ChengChan Chuang
+​馬上打臉保哥QQ
+
+6:09:31
+Dave Mark Su
+​要3R了嗎XD
+
+6:12:20
+chinggo chen
+​😂
+
+6:13:41
+Chen-Yu Pao
+​最近的潮流是一言不合就寫成擴充方法來重構XD
+
+6:13:43
+Winnie Lin
+​變得更簡潔 👍
+
+6:14:07
+Mike Huang
+​expressjs 無痛轉移 😎
+
+6:22:09
+Dave Mark Su
+​Mike大還可以邊直播邊留言喔XD
+
+6:23:13
+Mike Huang
+​為了看保哥直播，我決定預錄 😍
+
+6:23:35
+Dave Mark Su
+​原來是預錄的部分
+
+6:24:56
+LoveWife99
+​保哥 這個是現場真人吧😬 (我猜的 )
+
+6:25:34
+ChengChan Chuang
+​好精簡的上傳方法
+
+6:27:50
+LoveWife99
+​10
+
+6:28:02
+Xie jinghao
+​0
+
+6:28:05
+Winnie Lin
+​0
+
+6:28:07
+snew
+​50
+
+6:28:09
+張耀宇
+​0
+
+6:28:14
+Syuan Tsai
+​60
+
+6:28:19
+LoveWife99
+​3.141592688888
+
+6:28:23
+張萱蓉
+​75
+
+6:28:23
+chinggo chen
+​50
+
+6:28:27
+maskedWang
+​25
+
+6:28:30
+Rojer Chen
+​25
+
+6:28:34
+錢祖涵
+​25
+
+6:29:28
+LoveWife99
+​Raw String !!!
+
+6:29:31
+Mike Huang
+​我還以為在寫 python
+
+6:29:57
+LoveWife99
+​""""""
+
+6:29:59
+Winnie Lin
+​PHP 的 heredoc =)
+
+6:33:50
+LoveWife99
+​髒code
+
+6:34:18
+王泉富
+​這個好欸!!
+
+6:38:43
+Winnie Lin
+​終於~~~ 不用 app_offline.html
+
+6:41:08
+Jimmy Ho
+​看到董老師、郭董!!
+
+6:45:05
+Jimmy Ho
+​Poy要成為第四個RD惹
+
+6:46:46
+Jimmy Ho
+​聲音很小
+
+6:46:55
+Kai Chuck
+​很小聲~
+
+6:47:03
+ChengChan Chuang
+​沒聽到聲音
+
+6:47:03
+Dave Mark Su
+​聲音很小
+
+6:47:06
+Tai-Hao Yan
+​聲音很小 +1
+
+6:47:07
+黃葡萄
+​聲音好小
+
+6:47:16
+Summer Chen
+​很小聲
+
+6:47:30
+maskedWang
+​現場收音不行
+
+6:48:37
+chinggo chen
+​收音變很小聲了
+
+6:48:39
+Kai Chuck
+​收音超小聲
+
+6:48:49
+高紹育
+​聲音很小聲
+
+6:48:54
+yochen Liu
+​face-blue-wide-eyes
+
+6:49:26
+Jimmy Ho
+​恢復惹！！
+
+6:49:28
+Kai Chuck
+​OK！
+
+6:49:35
+chinggo chen
+​ok了
+
+6:49:37
+Hank Chen
+​😄
+
+6:49:50
+Mick Hsieh
+​OK了
+
+6:49:56
+Winnie Lin
+​Silverlight XD
+
+
+
+---
+
+
+6:49:26
+Jimmy Ho
+​恢復惹！！
+
+6:49:28
+Kai Chuck
+​OK！
+
+6:49:35
+chinggo chen
+​ok了
+
+6:49:37
+Hank Chen
+​😄
+
+6:49:50
+Mick Hsieh
+​OK了
+
+6:49:56
+Winnie Lin
+​Silverlight XD
+
+6:54:37
+LoveWife99
+​Microsoft Silverlight
+
+6:54:52
+LoveWife99
+​首次發行日期： 2007 年 9 月 5 日 😂
+
+6:59:53
+Jimmy Ho
+​我們都看凱爾的文章長大的😁
+
+7:01:28
+LoveWife99
+​我都吃康喜健蓋長大😆
+
+7:03:30
+Mike Huang
+​可以放心寫髒 code 了
+
+7:04:38
+LoveWife99
+​是不是被寶哥帶壞ㄌ
+
+7:04:52
+Will保哥
+​XDD
+
+7:05:21
+LoveWife99
+​寶哥為什麼可以秒發現🤭
+
+7:05:39
+Will保哥
+​I’m watching you! 👀
+
+7:06:09
+Mike Huang
+​可以寫髒 code 不被保哥罵，就能有更多時間寫髒 code，這是善的循環 🤨
+
+7:06:41
+LoveWife99
+​環保、髒code、愛地球🥶
+
+7:12:20
+LoveWife99
+​這世界不是只有.Net,也不是只有C# !!
+
+7:13:25
+黃葡萄
+​學不完了
+
+7:15:38
+Winnie Lin
+​就那些...就很多了
+
+7:16:53
+Mike Huang
+​跟保哥學買期貨，財富自由就不用學了
+
+7:19:06
+Will保哥
+​財富自由之後會很無聊，到時再來學寫程式
+
+7:25:19
+LoveWife99
+​恭喜寶哥
+
+7:33:20
+LoveWife99
+​董老師的YT在哪裡~
+
+7:34:37
+Will保哥
+​沒有吧
+
+7:41:16
+Rojer Chen
+​上面應該是董老師的 YT
+
+7:52:00
+LoveWife99
+​董老師超正派....
+
+7:53:34
+Nelson Life
+​🙌
+
+7:53:46
+黃葡萄
+​沒聲音?
+
+7:53:49
+YM Hsu
+​突然沒聲音
+
+7:53:56
+Winnie Lin
+​消音了
+
+7:53:56
+Rojer Chen
+​消音了
+
+7:54:06
+Mike Huang
+​聲音不見了，只聽到 QR code
+
+7:54:10
+Kehao Chen
+​最怕空氣突然安靜
+
+7:54:15
+1Bin
+​音響先下班了
+
+7:54:26
+黃葡萄
+​QQ
+
+7:54:27
+Shen Kyle
+​會發送問卷 問卷填寫我們會抽獎
+
+7:54:34
+Shen Kyle
+​謝謝大家 😄
+
+7:54:37
+JH SU
+​~~~
+
+7:55:01
+chinggo chen
+​😄 謝謝用心的講師群
+
+7:55:31
+ChengChan Chuang
+​謝謝主辦
+
+7:56:02
+陳信宏
+​washhands
+
+7:56:29
+YM Hsu
+​washhandswashhandswashhands
+
+7:56:51
+Mick Hsieh
+​謝謝主辦
+
+7:57:02
+張耀宇
+​謝謝主辦和講師群~yougotthis
+
+7:57:23
+STUDY4
+​線上問券連結
+
+7:57:23
+STUDY4
+​http://s.study4.tw/dnc2022-survey
+
+7:57:35
+STUDY4
+​請大家有空幫忙填寫一下 謝謝 http://s.study4.tw/dnc2022-survey
+
+7:59:14
+STUDY4
+​可以線上連結, 或者掃描現在的QR code
+
+8:01:56
+Egan
+​謝謝主辦單位，學習了
