@@ -71,6 +71,93 @@
             Additional information about the authentication type which is made available to the application.
             </summary>
         </member>
+        <member name="T:Microsoft.Owin.Security.AuthenticationTicket">
+            <summary>
+            Contains user identity information as well as additional authentication state.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Security.AuthenticationTicket.#ctor(System.Security.Claims.ClaimsIdentity,Microsoft.Owin.Security.AuthenticationProperties)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.AuthenticationTicket"/> class
+            </summary>
+            <param name="identity"></param>
+            <param name="properties"></param>
+        </member>
+        <member name="P:Microsoft.Owin.Security.AuthenticationTicket.Identity">
+            <summary>
+            Gets the authenticated user identity.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Owin.Security.AuthenticationTicket.Properties">
+            <summary>
+            Additional state values for the authentication session.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator">
+            <summary>
+            Provides pinned certificate validation based on the subject key identifier of the certificate.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator"/> class.
+            </summary>
+            <param name="validSubjectKeyIdentifiers">A set of subject key identifiers which are valid for an HTTPS request.</param>
+        </member>
+        <member name="M:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Verifies the remote Secure Sockets Layer (SSL) certificate used for authentication.
+            </summary>
+            <param name="sender">An object that contains state information for this validation.</param>
+            <param name="certificate">The certificate used to authenticate the remote party.</param>
+            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
+            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
+            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
+        </member>
+        <member name="T:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator">
+            <summary>
+            Implements a cert pinning validator passed on 
+            http://datatracker.ietf.org/doc/draft-ietf-websec-key-pinning/?include_text=1
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator.#ctor(System.Collections.Generic.IEnumerable{System.String},Microsoft.Owin.Security.SubjectPublicKeyInfoAlgorithm)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator"/> class.
+            </summary>
+            <param name="validBase64EncodedSubjectPublicKeyInfoHashes">A collection of valid base64 encoded hashes of the certificate public key information blob.</param>
+            <param name="algorithm">The algorithm used to generate the hashes.</param>
+        </member>
+        <member name="M:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Validates at least one SPKI hash is known.
+            </summary>
+            <param name="sender">An object that contains state information for this validation.</param>
+            <param name="certificate">The certificate used to authenticate the remote party.</param>
+            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
+            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
+            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
+        </member>
+        <member name="T:Microsoft.Owin.Security.CertificateThumbprintValidator">
+            <summary>
+            Provides pinned certificate validation based on the certificate thumbprint.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Security.CertificateThumbprintValidator.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.CertificateThumbprintValidator"/> class.
+            </summary>
+            <param name="validThumbprints">A set of thumbprints which are valid for an HTTPS request.</param>
+        </member>
+        <member name="M:Microsoft.Owin.Security.CertificateThumbprintValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Validates that the certificate thumbprints in the signing chain match at least one allowed thumbprint.
+            </summary>
+            <param name="sender">An object that contains state information for this validation.</param>
+            <param name="certificate">The certificate used to authenticate the remote party.</param>
+            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
+            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
+            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
+        </member>
         <member name="T:Microsoft.Owin.Security.Constants">
             <summary>
             String constants used only by the Security assembly
@@ -80,6 +167,35 @@
             <summary>
             Used by middleware extension methods to coordinate the default value Options property SignInAsAuthenticationType
             </summary>
+        </member>
+        <member name="T:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider">
+            <summary>
+            Used to provide the data protection services that are derived from the Data Protection API. It is the best choice of
+            data protection when you application is not hosted by ASP.NET and all processes are running as the same domain identity. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider.#ctor">
+            <summary>
+            Initializes a new DpapiDataProtectionProvider with a random application
+            name. This is only useful to protect data for the duration of the
+            current application execution.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new DpapiDataProtectionProvider which uses the given
+            appName as part of the protection algorithm
+            </summary>
+            <param name="appName">A user provided value needed to round-trip secured
+            data. The default value comes from the IAppBuilder.Properties["owin.AppName"] 
+            when self-hosted.</param>
+        </member>
+        <member name="M:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider.Create(System.String[])">
+            <summary>
+            Returns a new instance of IDataProtection for the provider.
+            </summary>
+            <param name="purposes">Additional entropy used to ensure protected data may only be unprotected for the correct purposes.</param>
+            <returns>An instance of a data protection service</returns>
         </member>
         <member name="T:Microsoft.Owin.Security.DataProtection.IDataProtectionProvider">
             <summary>
@@ -113,11 +229,23 @@
             <param name="protectedData">The byte array returned by a call to Protect on an identical IDataProtection service.</param>
             <returns>The byte array identical to the original userData passed to Protect.</returns>
         </member>
-        <member name="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler`1">
+        <member name="T:Microsoft.Owin.Security.ICertificateValidator">
             <summary>
-            Base class for the per-request work performed by most authentication middleware.
+            Interface for providing pinned certificate validation, which checks HTTPS 
+            communication against a known good list of certificates to protect against 
+            compromised or rogue CAs issuing certificates for hosts without the 
+            knowledge of the host owner.
             </summary>
-            <typeparam name="TOptions">Specifies which type for of AuthenticationOptions property</typeparam>
+        </member>
+        <member name="M:Microsoft.Owin.Security.ICertificateValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Verifies the remote Secure Sockets Layer (SSL) certificate used for authentication.
+            </summary>
+            <param name="sender">An object that contains state information for this validation.</param>
+            <param name="certificate">The certificate used to authenticate the remote party.</param>
+            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
+            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
+            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
         </member>
         <member name="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler">
             <summary>
@@ -174,7 +302,7 @@
         </member>
         <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.ApplyResponseGrantAsync">
             <summary>
-            Override this method to dela with sign-in/sign-out concerns, if an authentication scheme in question
+            Override this method to deal with sign-in/sign-out concerns, if an authentication scheme in question
             deals with grant/revoke as part of it's request flow. (like setting/deleting cookies)
             </summary>
             <returns></returns>
@@ -187,6 +315,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler`1">
+            <summary>
+            Base class for the per-request work performed by most authentication middleware.
+            </summary>
+            <typeparam name="TOptions">Specifies which type for of AuthenticationOptions property</typeparam>
+        </member>
         <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler`1.Initialize(`0,Microsoft.Owin.IOwinContext)">
             <summary>
             Initialize is called once per request to contextualize this instance with appropriate state.
@@ -195,71 +329,45 @@
             <param name="context">The utility object to observe the current request and response</param>
             <returns>async completion</returns>
         </member>
-        <member name="T:Microsoft.Owin.Security.AuthenticationTicket">
+        <member name="T:Microsoft.Owin.Security.Infrastructure.SecurityHelper">
             <summary>
-            Contains user identity information as well as additional authentication state.
+            Helper code used when implementing authentication middleware
             </summary>
         </member>
-        <member name="M:Microsoft.Owin.Security.AuthenticationTicket.#ctor(System.Security.Claims.ClaimsIdentity,Microsoft.Owin.Security.AuthenticationProperties)">
+        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.#ctor(Microsoft.Owin.IOwinContext)">
             <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.AuthenticationTicket"/> class
+            Helper code used when implementing authentication middleware
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.AddUserIdentity(System.Security.Principal.IIdentity)">
+            <summary>
+            Add an additional ClaimsIdentity to the ClaimsPrincipal in the "server.User" environment key
             </summary>
             <param name="identity"></param>
-            <param name="properties"></param>
         </member>
-        <member name="P:Microsoft.Owin.Security.AuthenticationTicket.Identity">
+        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.LookupChallenge(System.String,Microsoft.Owin.Security.AuthenticationMode)">
             <summary>
-            Gets the authenticated user identity.
+            Find response challenge details for a specific authentication middleware
             </summary>
+            <param name="authenticationType">The authentication type to look for</param>
+            <param name="authenticationMode">The authentication mode the middleware is running under</param>
+            <returns>The information instructing the middleware how it should behave</returns>
         </member>
-        <member name="P:Microsoft.Owin.Security.AuthenticationTicket.Properties">
+        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.LookupSignIn(System.String)">
             <summary>
-            Additional state values for the authentication session.
+            Find response sign-in details for a specific authentication middleware
             </summary>
+            <param name="authenticationType">The authentication type to look for</param>
+            <returns>The information instructing the middleware how it should behave</returns>
         </member>
-        <member name="T:Microsoft.Owin.Security.ICertificateValidator">
+        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.LookupSignOut(System.String,Microsoft.Owin.Security.AuthenticationMode)">
             <summary>
-            Interface for providing pinned certificate validation, which checks HTTPS 
-            communication against a known good list of certificates to protect against 
-            compromised or rogue CAs issuing certificates for hosts without the 
-            knowledge of the host owner.
+            Find response sign-out details for a specific authentication middleware
             </summary>
-        </member>
-        <member name="M:Microsoft.Owin.Security.ICertificateValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
-            <summary>
-            Verifies the remote Secure Sockets Layer (SSL) certificate used for authentication.
-            </summary>
-            <param name="sender">An object that contains state information for this validation.</param>
-            <param name="certificate">The certificate used to authenticate the remote party.</param>
-            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
-            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
-            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
-        </member>
-        <member name="T:Microsoft.Owin.Security.CertificateThumbprintValidator">
-            <summary>
-            Provides pinned certificate validation based on the certificate thumbprint.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Owin.Security.CertificateThumbprintValidator.#ctor(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.CertificateThumbprintValidator"/> class.
-            </summary>
-            <param name="validThumbprints">A set of thumbprints which are valid for an HTTPS request.</param>
-        </member>
-        <member name="M:Microsoft.Owin.Security.CertificateThumbprintValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
-            <summary>
-            Validates that the certificate thumbprints in the signing chain match at least one whitelisted thumbprint.
-            </summary>
-            <param name="sender">An object that contains state information for this validation.</param>
-            <param name="certificate">The certificate used to authenticate the remote party.</param>
-            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
-            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
-            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
-        </member>
-        <member name="T:Microsoft.Owin.Security.Provider.BaseContext`1">
-            <summary>
-            Base class used for certain event contexts
-            </summary>
+            <param name="authenticationType">The authentication type to look for</param>
+            <param name="authenticationMode">The authentication mode the middleware is running under</param>
+            <returns>The information instructing the middleware how it should behave</returns>
         </member>
         <member name="M:Microsoft.Owin.Security.Notifications.BaseNotification`1.HandleResponse">
             <summary>
@@ -303,74 +411,10 @@
             Gets or sets the Protocol message
             </summary>
         </member>
-        <member name="T:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider">
+        <member name="T:Microsoft.Owin.Security.Provider.BaseContext`1">
             <summary>
-            Used to provide the data protection services that are derived from the Data Protection API. It is the best choice of
-            data protection when you application is not hosted by ASP.NET and all processes are running as the same domain identity. 
+            Base class used for certain event contexts
             </summary>
-        </member>
-        <member name="M:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider.#ctor">
-            <summary>
-            Initializes a new DpapiDataProtectionProvider with a random application
-            name. This is only useful to protect data for the duration of the
-            current application execution.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider.#ctor(System.String)">
-            <summary>
-            Initializes a new DpapiDataProtectionProvider which uses the given
-            appName as part of the protection algorithm
-            </summary>
-            <param name="appName">A user provided value needed to round-trip secured
-            data. The default value comes from the IAppBuilder.Properties["owin.AppName"] 
-            when self-hosted.</param>
-        </member>
-        <member name="M:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider.Create(System.String[])">
-            <summary>
-            Returns a new instance of IDataProtection for the provider.
-            </summary>
-            <param name="purposes">Additional entropy used to ensure protected data may only be unprotected for the correct purposes.</param>
-            <returns>An instance of a data protection service</returns>
-        </member>
-        <member name="T:Microsoft.Owin.Security.Infrastructure.SecurityHelper">
-            <summary>
-            Helper code used when implementing authentication middleware
-            </summary>
-        </member>
-        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.#ctor(Microsoft.Owin.IOwinContext)">
-            <summary>
-            Helper code used when implementing authentication middleware
-            </summary>
-            <param name="context"></param>
-        </member>
-        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.AddUserIdentity(System.Security.Principal.IIdentity)">
-            <summary>
-            Add an additional ClaimsIdentity to the ClaimsPrincipal in the "server.User" environment key
-            </summary>
-            <param name="identity"></param>
-        </member>
-        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.LookupChallenge(System.String,Microsoft.Owin.Security.AuthenticationMode)">
-            <summary>
-            Find response challenge details for a specific authentication middleware
-            </summary>
-            <param name="authenticationType">The authentication type to look for</param>
-            <param name="authenticationMode">The authentication mode the middleware is running under</param>
-            <returns>The information instructing the middleware how it should behave</returns>
-        </member>
-        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.LookupSignIn(System.String)">
-            <summary>
-            Find response sign-in details for a specific authentication middleware
-            </summary>
-            <param name="authenticationType">The authentication type to look for</param>
-            <returns>The information instructing the middleware how it should behave</returns>
-        </member>
-        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.LookupSignOut(System.String,Microsoft.Owin.Security.AuthenticationMode)">
-            <summary>
-            Find response sign-out details for a specific authentication middleware
-            </summary>
-            <param name="authenticationType">The authentication type to look for</param>
-            <param name="authenticationMode">The authentication mode the middleware is running under</param>
-            <returns>The information instructing the middleware how it should behave</returns>
         </member>
         <member name="T:Microsoft.Owin.Security.Provider.EndpointContext`1">
             <summary>
@@ -382,15 +426,15 @@
             Creates an instance of this context
             </summary>
         </member>
+        <member name="P:Microsoft.Owin.Security.Provider.EndpointContext`1.IsRequestCompleted">
+            <summary>
+            True if the request should not be processed further by other components.
+            </summary>
+        </member>
         <member name="M:Microsoft.Owin.Security.Provider.EndpointContext`1.RequestCompleted">
             <summary>
             Prevents the request from being processed further by other components. 
             IsRequestCompleted becomes true after calling.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Owin.Security.Provider.EndpointContext`1.IsRequestCompleted">
-            <summary>
-            True if the request should not be processed further by other components.
             </summary>
         </member>
         <member name="T:Microsoft.Owin.Security.Resources">
@@ -429,54 +473,10 @@
               Looks up a localized string similar to The state passed to UnhookAuthentication may only be the return value from HookAuthentication..
             </summary>
         </member>
-        <member name="T:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator">
-            <summary>
-            Provides pinned certificate validation based on the subject key identifier of the certificate.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator.#ctor(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator"/> class.
-            </summary>
-            <param name="validSubjectKeyIdentifiers">A set of subject key identifiers which are valid for an HTTPS request.</param>
-        </member>
-        <member name="M:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
-            <summary>
-            Verifies the remote Secure Sockets Layer (SSL) certificate used for authentication.
-            </summary>
-            <param name="sender">An object that contains state information for this validation.</param>
-            <param name="certificate">The certificate used to authenticate the remote party.</param>
-            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
-            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
-            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
-        </member>
         <member name="T:Microsoft.Owin.Security.SubjectPublicKeyInfoAlgorithm">
             <summary>
             The algorithm used to generate the subject public key information blob hashes.
             </summary>
-        </member>
-        <member name="T:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator">
-            <summary>
-            Implements a cert pinning validator passed on 
-            http://datatracker.ietf.org/doc/draft-ietf-websec-key-pinning/?include_text=1
-            </summary>
-        </member>
-        <member name="M:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator.#ctor(System.Collections.Generic.IEnumerable{System.String},Microsoft.Owin.Security.SubjectPublicKeyInfoAlgorithm)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator"/> class.
-            </summary>
-            <param name="validBase64EncodedSubjectPublicKeyInfoHashes">A collection of valid base64 encoded hashes of the certificate public key information blob.</param>
-            <param name="algorithm">The algorithm used to generate the hashes.</param>
-        </member>
-        <member name="M:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
-            <summary>
-            Validates at least one SPKI hash is known.
-            </summary>
-            <param name="sender">An object that contains state information for this validation.</param>
-            <param name="certificate">The certificate used to authenticate the remote party.</param>
-            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
-            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
-            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
         </member>
         <member name="M:Microsoft.Win32.NativeMethods.CryptEncodeObject(System.UInt32,System.IntPtr,Microsoft.Win32.NativeMethods.CERT_PUBLIC_KEY_INFO@,System.Byte[],System.UInt32@)">
             <summary>
